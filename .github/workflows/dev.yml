@@ -1,12 +1,13 @@
 name: Terraform Deploy dev
 
 on:
-  push:
-    branches:
+  #push:
+    #branches:
       - main
-  pull_request:
-    branches:
+  #pull_request:
+    #branches:
       - main
+ workflow_dispatch: 
 
 permissions:
   contents: read

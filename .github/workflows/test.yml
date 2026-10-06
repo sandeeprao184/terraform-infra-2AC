@@ -1,4 +1,4 @@
-name: Terraform deploy dev
+name: Terraform deploy test
 
 on:
   pull_request:

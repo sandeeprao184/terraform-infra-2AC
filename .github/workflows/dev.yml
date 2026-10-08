@@ -1,15 +1,16 @@
 name: Terraform deploy dev
 
 on:
-  pull_request:
-    branches:
-      - main
-
-  push:
-    branches:
-      - main
+  # pull_request:
+  #   branches:
+  #     - main
+  # push:
+  #   branches:
+  #     - main
+workflow_dispatch:
 
 permissions:
+  id-token : write
   contents: read
 
 jobs:
@@ -31,7 +32,7 @@ jobs:
        - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::699158992697:role/oidc-role
+          role-to-assume: arn:aws:iam::699158992697:role/dev-test-role
           aws-region: us-east-1
 
       - name: Terraform Init

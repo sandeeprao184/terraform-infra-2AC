@@ -23,7 +23,7 @@ jobs:
         working-directory: modules/dev
 
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Setup Terraform

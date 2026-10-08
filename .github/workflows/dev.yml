@@ -7,10 +7,10 @@ on:
   # push:
   #   branches:
   #     - main
-workflow_dispatch:
+  workflow_dispatch:
 
 permissions:
-  id-token : write
+  id-token: write
   contents: read
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
-       - name: Configure AWS Credentials
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::699158992697:role/dev-test-role
@@ -43,4 +43,4 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
-        
+
